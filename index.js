@@ -39,8 +39,16 @@ async function startBot() {
         const { connection, lastDisconnect, qr } = update;
 
         if (qr && connection !== 'open') {
-            console.log("🚨 Escaneie este QR code no WhatsApp:");
+            console.log("\n" + "=".repeat(60));
+            console.log("🚨 QR CODE PARA AUTENTICAÇÃO DO WHATSAPP");
+            console.log("=".repeat(60));
+            console.log("📱 Abra o WhatsApp no seu celular");
+            console.log("📱 Vá em: Configurações > Aparelhos conectados > Conectar um aparelho");
+            console.log("📱 Escaneie o QR code abaixo:\n");
             qrcode.generate(qr, { small: true });
+            console.log("\n" + "=".repeat(60));
+            console.log("⏳ Aguardando escaneamento do QR code...");
+            console.log("=".repeat(60) + "\n");
         }
 
         console.log('📡 Status da conexão:', connection);
