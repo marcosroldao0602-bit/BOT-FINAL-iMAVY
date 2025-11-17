@@ -1,5 +1,7 @@
 ﻿node_modules/
-auth_info/
+# Ignora arquivos dentro de auth_info, mas mantém a pasta
+auth_info/*
+!auth_info/.gitkeep
 bot_memory.json
 .env
 debug-modal-captura.png
