@@ -103,11 +103,14 @@ Para fazer deploy no Railway, consulte o arquivo [RAILWAY_SETUP.md](./RAILWAY_SE
 └── VERCEL_SETUP.md   # Guia de deploy no Vercel
 ```
 
-## ⚠️ Importante
+## ⚠️ Importante - Segurança
 
-- O diretório `auth_info/` contém credenciais sensíveis e não deve ser commitado
-- Mantenha suas chaves de API seguras e nunca as compartilhe
-- No Railway, use Volumes persistentes para o diretório `auth_info/`
+- ⚠️ **ATENÇÃO:** O diretório `auth_info/` contém credenciais sensíveis do WhatsApp
+- 🔒 **CRÍTICO:** Se o repositório for **PÚBLICO**, NÃO faça commit de `auth_info/`
+- ✅ **Recomendado:** Mantenha o repositório **PRIVADO** se commitar `auth_info/`
+- 📋 Os arquivos de `auth_info/` são necessários para manter a sessão do WhatsApp ativa
+- 🔑 Mantenha suas chaves de API seguras e nunca as compartilhe
+- 💾 Em plataformas de deploy, use Volumes persistentes para `auth_info/`
 
 ## 📄 Licença
 

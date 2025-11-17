@@ -1,7 +1,7 @@
 ﻿node_modules/
-# Ignora arquivos dentro de auth_info, mas mantém a pasta
-auth_info/*
-!auth_info/.gitkeep
+# IMPORTANTE: auth_info/ NÃO está ignorado para preservar a sessão do WhatsApp
+# ATENÇÃO: Esses arquivos contêm credenciais sensíveis!
+# Certifique-se de que o repositório seja PRIVADO se commitar auth_info/
 bot_memory.json
 .env
 debug-modal-captura.png
