@@ -1,27 +1,17 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "index.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "server.js",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
     {
       "src": "/api/qrcode",
-      "dest": "/server.js"
+      "dest": "/api/index.js"
     },
     {
       "src": "/api/status",
-      "dest": "/server.js"
+      "dest": "/api/index.js"
     },
     {
       "src": "/",
-      "dest": "/server.js"
+      "dest": "/api/index.js"
     }
   ],
   "env": {
