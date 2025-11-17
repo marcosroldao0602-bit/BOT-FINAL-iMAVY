@@ -1,0 +1,19 @@
+# render.yaml para Render.com
+services:
+  - type: web
+    name: imavybot
+    env: node
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: HUGGING_FACE_API
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: ALLOWED_GROUP_NAMES
+        sync: false
+      - key: ALLOWED_USER_IDS
+        sync: false
+

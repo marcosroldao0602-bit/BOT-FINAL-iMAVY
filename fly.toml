@@ -1,0 +1,21 @@
+# fly.toml para Fly.io
+app = "imavybot"
+primary_region = "gru"  # São Paulo - ajuste para sua região
+
+[build]
+
+[env]
+  PORT = "3000"
+  NODE_ENV = "production"
+
+[[services]]
+  internal_port = 3000
+  protocol = "tcp"
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 1
+
+[[mounts]]
+  source = "auth_data"
+  destination = "/app/auth_info"
+

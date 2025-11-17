@@ -41,7 +41,17 @@ npm start
 
 5. Escaneie o QR code que aparecerá no terminal com seu WhatsApp
 
-## ☁️ Deploy no Railway
+## ☁️ Deploy
+
+### ⚠️ Railway com Plano Limitado?
+
+Se o Railway estiver limitando seu plano, consulte **[DEPLOY_ALTERNATIVAS.md](./DEPLOY_ALTERNATIVAS.md)** para outras opções de deploy gratuitas:
+- **Render.com** (Recomendado - fácil)
+- **Fly.io** (Melhor para 24/7)
+- **Koyeb** (Alternativa simples)
+- **VPS** (Máximo controle)
+
+### Deploy no Railway
 
 Para fazer deploy no Railway, consulte o arquivo [RAILWAY_SETUP.md](./RAILWAY_SETUP.md) para instruções detalhadas.
 
@@ -69,7 +79,11 @@ Para fazer deploy no Railway, consulte o arquivo [RAILWAY_SETUP.md](./RAILWAY_SE
 ├── package.json       # Dependências e scripts
 ├── Procfile          # Configuração para Railway
 ├── railway.json      # Configuração adicional do Railway
-└── nixpacks.toml     # Configuração de build do Railway
+├── nixpacks.toml     # Configuração de build do Railway
+├── fly.toml          # Configuração para Fly.io
+├── render.yaml       # Configuração para Render.com
+├── RAILWAY_SETUP.md  # Guia de deploy no Railway
+└── DEPLOY_ALTERNATIVAS.md  # Alternativas de deploy
 ```
 
 ## ⚠️ Importante
