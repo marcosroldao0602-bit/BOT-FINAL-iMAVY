@@ -14,7 +14,7 @@ Bot inteligente para WhatsApp usando Baileys, com suporte a IA via Hugging Face 
 
 ## 📋 Pré-requisitos
 
-- Node.js >= 18.0.0
+- Node.js >= 18.0.0 (recomendado: 22.x para Vercel)
 - npm >= 9.0.0
 
 ## 🔧 Instalação Local

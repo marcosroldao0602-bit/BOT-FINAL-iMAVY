@@ -24,9 +24,9 @@ that will automatically upgrade when a new major Node.js Version is released.
 ```
 
 **Solução:** ✅ **Corrigido**
-- Alterado de `">=18.0.0"` para `"18.x"` para fixar a versão
-- Isso evita atualizações automáticas para versões major novas
-- O Vercel continuará usando Node.js 18.x até você atualizar manualmente
+- Atualizado para `"22.x"` (Node.js 18.x foi descontinuado no Vercel)
+- Isso fixa a versão e evita atualizações automáticas para versões major novas
+- O Vercel usará Node.js 22.x
 
 ### 3. Avisos de Dependências Deprecated
 
@@ -50,7 +50,7 @@ npm warn deprecated puppeteer@21.11.0: < 24.15.0 is no longer supported
 O `vercel.json` agora está otimizado:
 - Sem campo `builds` (usa detecção automática)
 - Rotas configuradas para `/api/index.js`
-- Node.js fixado em 18.x
+- Node.js fixado em 22.x (versão atual suportada pelo Vercel)
 
 ## 📝 Próximos Passos
 
