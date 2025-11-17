@@ -17,6 +17,9 @@ import { isAuthorized } from './functions/adminCommands.js';
 import { getNumberFromJid, formatNumberInternational } from './functions/utils.js';
 import { scheduleGroupMessages } from './functions/scheduler.js';
 
+// Importa o servidor web para exibir QR code
+import { setQRCode, setConnectionStatus } from './server.js';
+
 async function startBot() {
     console.log("===============================================");
     console.log("🚀 Iniciando iMavyBot - Respostas Pré-Definidas");
@@ -48,15 +51,29 @@ async function startBot() {
             qrcode.generate(qr, { small: true });
             console.log("\n" + "=".repeat(60));
             console.log("⏳ Aguardando escaneamento do QR code...");
+            console.log("=".repeat(60));
+            
+            // Exibe URL do servidor web se disponível
+            const port = process.env.PORT || 3000;
+            const url = process.env.VERCEL_URL 
+                ? `https://${process.env.VERCEL_URL}` 
+                : `http://localhost:${port}`;
+            console.log(`🌐 Acesse para ver o QR code no navegador: ${url}`);
             console.log("=".repeat(60) + "\n");
+            
+            // Atualiza o QR code no servidor web
+            setQRCode(qr);
         }
 
         console.log('📡 Status da conexão:', connection);
 
         if (connection === 'open') {
             console.log('✅ Conectado ao WhatsApp com sucesso!');
+            setConnectionStatus('connected');
             // Ativa o agendador (fechar e abrir grupo)
             scheduleGroupMessages(sock);
+        } else if (connection === 'close') {
+            setConnectionStatus('disconnected');
         }
 
         if (connection === 'close') {
@@ -328,4 +345,9 @@ async function startBot() {
     });
 }
 
+// Inicia o servidor web e o bot
+import server from './server.js';
+
+// O servidor já é iniciado automaticamente quando importado
+// Agora inicia o bot
 startBot();

@@ -51,6 +51,19 @@ Se o Railway estiver limitando seu plano, consulte **[DEPLOY_ALTERNATIVAS.md](./
 - **Koyeb** (Alternativa simples)
 - **VPS** (Máximo controle)
 
+### 📱 Escanear QR Code via Web
+
+O bot agora inclui um servidor web para exibir o QR code no navegador! 
+
+**Como usar:**
+1. Quando o bot iniciar, ele mostrará uma URL no terminal
+2. Acesse essa URL no navegador (ou no celular)
+3. Escaneie o QR code diretamente da página web
+
+**Deploy no Vercel (apenas para QR code):**
+- Consulte **[VERCEL_SETUP.md](./VERCEL_SETUP.md)** para instruções
+- ⚠️ **Nota:** Vercel não é ideal para bots 24/7, use apenas para exibir o QR code
+
 ### Deploy no Railway
 
 Para fazer deploy no Railway, consulte o arquivo [RAILWAY_SETUP.md](./RAILWAY_SETUP.md) para instruções detalhadas.
@@ -82,8 +95,12 @@ Para fazer deploy no Railway, consulte o arquivo [RAILWAY_SETUP.md](./RAILWAY_SE
 ├── nixpacks.toml     # Configuração de build do Railway
 ├── fly.toml          # Configuração para Fly.io
 ├── render.yaml       # Configuração para Render.com
+├── vercel.json       # Configuração para Vercel
+├── server.js         # Servidor web para exibir QR code
+├── api/              # Serverless functions para Vercel
 ├── RAILWAY_SETUP.md  # Guia de deploy no Railway
-└── DEPLOY_ALTERNATIVAS.md  # Alternativas de deploy
+├── DEPLOY_ALTERNATIVAS.md  # Alternativas de deploy
+└── VERCEL_SETUP.md   # Guia de deploy no Vercel
 ```
 
 ## ⚠️ Importante
